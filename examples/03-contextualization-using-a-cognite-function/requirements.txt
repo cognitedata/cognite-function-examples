@@ -1,1 +1,1 @@
-cognite-sdk-experimental==0.75.0
+cognite-sdk-experimental==0.82.0

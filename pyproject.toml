@@ -6,8 +6,9 @@ authors = ["Ivar Stangeby <ivar.stangeby@cognite.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-cognite-sdk-experimental = "^0.75.0"
+cognite-sdk-experimental = "0.82.0"
 jupyterlab = "^3.3.4"
+msal = "^1.18.0"
 
 [tool.poetry.dev-dependencies]
 
