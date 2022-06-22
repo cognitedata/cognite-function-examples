@@ -1,4 +1,7 @@
-# cognite-function-examples
+# Cognite Function Examples
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 This repository contains a set of Jupyter Notebooks showcasing the use of Cognite Functions. 
 
 ## Requirements
