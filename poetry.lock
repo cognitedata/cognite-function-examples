@@ -164,7 +164,7 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "cognite-sdk-core"
-version = "2.46.1"
+version = "2.56.0"
 description = "Client library for Cognite Data Fusion (CDF)"
 category = "main"
 optional = false
@@ -180,22 +180,22 @@ pandas = ["pandas"]
 
 [[package]]
 name = "cognite-sdk-experimental"
-version = "0.75.0"
+version = "0.82.0"
 description = "Experimental additions to the Python SDK"
 category = "main"
 optional = false
 python-versions = ">=3.7,<4.0.0"
 
 [package.dependencies]
-cognite-sdk-core = ">=2.42.0,<3.0.0"
-pandas = ">=1.1,<2.0"
+cognite-sdk-core = ">=2.49.1"
+pandas = ">=1.1.5"
 regex = ">=2020.11.13,<2023"
 responses = ">=0.13.3,<0.14.0"
 sympy = ">=1.3.0,<2.0.0"
 typing-extensions = ">=3.7.4,<5"
 
 [package.extras]
-geopandas = ["geopandas (>=0.10.0,<0.11.0)", "shapely (>=1.7.0,<2.0.0)"]
+geopandas = ["geopandas (>=0.10.0)", "shapely (>=1.7.0)"]
 
 [[package]]
 name = "colorama"
@@ -204,6 +204,25 @@ description = "Cross-platform colored terminal text."
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "cryptography"
+version = "37.0.2"
+description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+cffi = ">=1.12"
+
+[package.extras]
+docs = ["sphinx (>=1.6.5,!=1.8.0,!=3.1.0,!=3.1.1)", "sphinx-rtd-theme"]
+docstest = ["pyenchant (>=1.6.11)", "twine (>=1.12.0)", "sphinxcontrib-spelling (>=4.0.1)"]
+pep8test = ["black", "flake8", "flake8-import-order", "pep8-naming"]
+sdist = ["setuptools_rust (>=0.11.4)"]
+ssh = ["bcrypt (>=3.1.5)"]
+test = ["pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-subtests", "pytest-xdist", "pretend", "iso8601", "pytz", "hypothesis (>=1.11.4,!=3.79.2)"]
 
 [[package]]
 name = "debugpy"
@@ -559,6 +578,19 @@ develop = ["pytest (>=4.6)", "pycodestyle", "pytest-cov", "codecov", "wheel"]
 tests = ["pytest (>=4.6)"]
 
 [[package]]
+name = "msal"
+version = "1.18.0"
+description = "The Microsoft Authentication Library (MSAL) for Python library enables your app to access the Microsoft Cloud by supporting authentication of users with Microsoft Azure Active Directory accounts (AAD) and Microsoft Accounts (MSA) using industry standard OAuth2 and OpenID Connect."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+cryptography = ">=0.6,<40"
+PyJWT = {version = ">=1.0.0,<3", extras = ["crypto"]}
+requests = ">=2.0.0,<3"
+
+[[package]]
 name = "nbclassic"
 version = "0.3.7"
 description = "Jupyter Notebook as a Jupyter Server extension."
@@ -863,6 +895,23 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "pyjwt"
+version = "2.4.0"
+description = "JSON Web Token implementation in Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+cryptography = {version = ">=3.3.1", optional = true, markers = "extra == \"crypto\""}
+
+[package.extras]
+crypto = ["cryptography (>=3.3.1)"]
+dev = ["sphinx", "sphinx-rtd-theme", "zope.interface", "cryptography (>=3.3.1)", "pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)", "mypy", "pre-commit"]
+docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
+tests = ["pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)"]
+
+[[package]]
 name = "pyparsing"
 version = "3.0.8"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -1164,7 +1213,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "af00ed0e7f41280dc4e794ccfb3b11727a13d95ddc790044dde155d970832f69"
+content-hash = "5f6ed22e890b6e0d87a51bb750eab0402951b31fc908182cb66494455f09ae9f"
 
 [metadata.files]
 anyio = [
@@ -1287,16 +1336,40 @@ charset-normalizer = [
     {file = "charset_normalizer-2.0.12-py3-none-any.whl", hash = "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"},
 ]
 cognite-sdk-core = [
-    {file = "cognite-sdk-core-2.46.1.tar.gz", hash = "sha256:e04177787abc1a9ee46c05d4a167c5fbad56f1990e62266c979ed1595566e0bb"},
-    {file = "cognite_sdk_core-2.46.1-py3-none-any.whl", hash = "sha256:456f0c92177643274346947313b1784e8aedfdf76ce08e0742e8e3a9a5365042"},
+    {file = "cognite-sdk-core-2.56.0.tar.gz", hash = "sha256:81b734d58e9516daa07ef41719167548d629438784ff42d37c0487473e94c154"},
+    {file = "cognite_sdk_core-2.56.0-py3-none-any.whl", hash = "sha256:56707627a00863e009df356f9d6f18da65f1293dae4bd217e5eda8fe5e89ff62"},
 ]
 cognite-sdk-experimental = [
-    {file = "cognite-sdk-experimental-0.75.0.tar.gz", hash = "sha256:130613743dcc4df29b0964874965002902cbe954f971693c2e7c8183916ceb44"},
-    {file = "cognite_sdk_experimental-0.75.0-py3-none-any.whl", hash = "sha256:6c6882e9db4a9f9bb060a80d683fe3b781455b200c51e557b91f90d84e1806b9"},
+    {file = "cognite-sdk-experimental-0.82.0.tar.gz", hash = "sha256:2ca615fc3a325e5d27f77080f01eb49aa60b567e77026cbddcf58d557dc69e3d"},
+    {file = "cognite_sdk_experimental-0.82.0-py3-none-any.whl", hash = "sha256:ba0d4735018066954e34cdb2f1d9ffe47db421f1a2b48c121de50983908ff2f4"},
 ]
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+cryptography = [
+    {file = "cryptography-37.0.2-cp36-abi3-macosx_10_10_universal2.whl", hash = "sha256:ef15c2df7656763b4ff20a9bc4381d8352e6640cfeb95c2972c38ef508e75181"},
+    {file = "cryptography-37.0.2-cp36-abi3-macosx_10_10_x86_64.whl", hash = "sha256:3c81599befb4d4f3d7648ed3217e00d21a9341a9a688ecdd615ff72ffbed7336"},
+    {file = "cryptography-37.0.2-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:2bd1096476aaac820426239ab534b636c77d71af66c547b9ddcd76eb9c79e004"},
+    {file = "cryptography-37.0.2-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_24_aarch64.whl", hash = "sha256:31fe38d14d2e5f787e0aecef831457da6cec68e0bb09a35835b0b44ae8b988fe"},
+    {file = "cryptography-37.0.2-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:093cb351031656d3ee2f4fa1be579a8c69c754cf874206be1d4cf3b542042804"},
+    {file = "cryptography-37.0.2-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:59b281eab51e1b6b6afa525af2bd93c16d49358404f814fe2c2410058623928c"},
+    {file = "cryptography-37.0.2-cp36-abi3-manylinux_2_24_x86_64.whl", hash = "sha256:0cc20f655157d4cfc7bada909dc5cc228211b075ba8407c46467f63597c78178"},
+    {file = "cryptography-37.0.2-cp36-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:f8ec91983e638a9bcd75b39f1396e5c0dc2330cbd9ce4accefe68717e6779e0a"},
+    {file = "cryptography-37.0.2-cp36-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:46f4c544f6557a2fefa7ac8ac7d1b17bf9b647bd20b16decc8fbcab7117fbc15"},
+    {file = "cryptography-37.0.2-cp36-abi3-win32.whl", hash = "sha256:731c8abd27693323b348518ed0e0705713a36d79fdbd969ad968fbef0979a7e0"},
+    {file = "cryptography-37.0.2-cp36-abi3-win_amd64.whl", hash = "sha256:471e0d70201c069f74c837983189949aa0d24bb2d751b57e26e3761f2f782b8d"},
+    {file = "cryptography-37.0.2-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a68254dd88021f24a68b613d8c51d5c5e74d735878b9e32cc0adf19d1f10aaf9"},
+    {file = "cryptography-37.0.2-pp37-pypy37_pp73-manylinux_2_24_x86_64.whl", hash = "sha256:a7d5137e556cc0ea418dca6186deabe9129cee318618eb1ffecbd35bee55ddc1"},
+    {file = "cryptography-37.0.2-pp38-pypy38_pp73-macosx_10_10_x86_64.whl", hash = "sha256:aeaba7b5e756ea52c8861c133c596afe93dd716cbcacae23b80bc238202dc023"},
+    {file = "cryptography-37.0.2-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:95e590dd70642eb2079d280420a888190aa040ad20f19ec8c6e097e38aa29e06"},
+    {file = "cryptography-37.0.2-pp38-pypy38_pp73-manylinux_2_24_x86_64.whl", hash = "sha256:1b9362d34363f2c71b7853f6251219298124aa4cc2075ae2932e64c91a3e2717"},
+    {file = "cryptography-37.0.2-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:e53258e69874a306fcecb88b7534d61820db8a98655662a3dd2ec7f1afd9132f"},
+    {file = "cryptography-37.0.2-pp39-pypy39_pp73-macosx_10_10_x86_64.whl", hash = "sha256:1f3bfbd611db5cb58ca82f3deb35e83af34bb8cf06043fa61500157d50a70982"},
+    {file = "cryptography-37.0.2-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:419c57d7b63f5ec38b1199a9521d77d7d1754eb97827bbb773162073ccd8c8d4"},
+    {file = "cryptography-37.0.2-pp39-pypy39_pp73-manylinux_2_24_x86_64.whl", hash = "sha256:dc26bb134452081859aa21d4990474ddb7e863aa39e60d1592800a8865a702de"},
+    {file = "cryptography-37.0.2-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:3b8398b3d0efc420e777c40c16764d6870bcef2eb383df9c6dbb9ffe12c64452"},
+    {file = "cryptography-37.0.2.tar.gz", hash = "sha256:f224ad253cc9cea7568f49077007d2263efa57396a2f2f78114066fd54b5c68e"},
 ]
 debugpy = [
     {file = "debugpy-1.6.0-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:eb1946efac0c0c3d411cea0b5ac772fbde744109fd9520fb0c5a51979faf05ad"},
@@ -1452,6 +1525,10 @@ mpmath = [
     {file = "mpmath-1.2.1-py3-none-any.whl", hash = "sha256:604bc21bd22d2322a177c73bdb573994ef76e62edd595d17e00aff24b0667e5c"},
     {file = "mpmath-1.2.1.tar.gz", hash = "sha256:79ffb45cf9f4b101a807595bcb3e72e0396202e0b1d25d689134b48c4216a81a"},
 ]
+msal = [
+    {file = "msal-1.18.0-py2.py3-none-any.whl", hash = "sha256:9c10e6cb32e0b6b8eaafc1c9a68bc3b2ff71505e0c5b8200799582d8b9f22947"},
+    {file = "msal-1.18.0.tar.gz", hash = "sha256:576af55866038b60edbcb31d831325a1bd8241ed272186e2832968fd4717d202"},
+]
 nbclassic = [
     {file = "nbclassic-0.3.7-py3-none-any.whl", hash = "sha256:89184baa2d66b8ac3c8d3df57cbcf16f34148954d410a2fb3e897d7c18f2479d"},
     {file = "nbclassic-0.3.7.tar.gz", hash = "sha256:36dbaa88ffaf5dc05d149deb97504b86ba648f4a80a60b8a58ac94acab2daeb5"},
@@ -1485,6 +1562,7 @@ numpy = [
     {file = "numpy-1.22.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8251ed96f38b47b4295b1ae51631de7ffa8260b5b087808ef09a39a9d66c97ab"},
     {file = "numpy-1.22.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:48a3aecd3b997bf452a2dedb11f4e79bc5bfd21a1d4cc760e703c31d57c84b3e"},
     {file = "numpy-1.22.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a3bae1a2ed00e90b3ba5f7bd0a7c7999b55d609e0c54ceb2b076a25e345fa9f4"},
+    {file = "numpy-1.22.3-cp310-cp310-win32.whl", hash = "sha256:f950f8845b480cffe522913d35567e29dd381b0dc7e4ce6a4a9f9156417d2430"},
     {file = "numpy-1.22.3-cp310-cp310-win_amd64.whl", hash = "sha256:08d9b008d0156c70dc392bb3ab3abb6e7a711383c3247b410b39962263576cd4"},
     {file = "numpy-1.22.3-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:201b4d0552831f7250a08d3b38de0d989d6f6e4658b709a02a73c524ccc6ffce"},
     {file = "numpy-1.22.3-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:f8c1f39caad2c896bc0018f699882b345b2a63708008be29b1f355ebf6f933fe"},
@@ -1609,6 +1687,10 @@ pycparser = [
 pygments = [
     {file = "Pygments-2.12.0-py3-none-any.whl", hash = "sha256:dc9c10fb40944260f6ed4c688ece0cd2048414940f1cea51b8b226318411c519"},
     {file = "Pygments-2.12.0.tar.gz", hash = "sha256:5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"},
+]
+pyjwt = [
+    {file = "PyJWT-2.4.0-py3-none-any.whl", hash = "sha256:72d1d253f32dbd4f5c88eaf1fdc62f3a19f676ccbadb9dbc5d07e951b2b26daf"},
+    {file = "PyJWT-2.4.0.tar.gz", hash = "sha256:d42908208c699b3b973cbeb01a969ba6a96c821eefb1c5bfe4c390c01d67abba"},
 ]
 pyparsing = [
     {file = "pyparsing-3.0.8-py3-none-any.whl", hash = "sha256:ef7b523f6356f763771559412c0d7134753f037822dad1b16945b7b846f7ad06"},
